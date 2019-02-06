@@ -4,15 +4,27 @@
 
 #include <cmath>
 
+#include "functions.h"
+
 using std::cout;
 using std::endl;
 
-int main(){
+void recursive1();
 
-    const double MMS_PER_INCH = 25.4;
-    double width = 8.5 * MMS_PER_INCH;
-    double height = 11 * MMS_PER_INCH;
-    cout << std::setprecision(2) << std::fixed << (8.5 * MMS_PER_INCH) << " X " << height << " mm" << endl;
+void recursive2() {
+    std::cout << "Goodbye" << std::endl;
+    recursive1();
+}
+
+void recursive1() {
+    std::cout << "Hello" << std::endl;
+    recursive2();
+}
+
+int main(){
+    recursive2();
+    double cube = exponent(5, 3);
+    double square = exponent(3);
     return 0;
 }
 

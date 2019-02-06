@@ -7,5 +7,9 @@
 const double PI = 3.14159;
 
 double exponent(double base, double exp);
+double exponent(float base, uint64_t exp);
+double exponent(float base, int exp);
+
+double exponent(int base);
 
 #endif //LECTURE_FUNCTIONS_H
