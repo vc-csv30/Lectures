@@ -17,8 +17,11 @@ void recursive2() {
 }
 
 void recursive1() {
+    int x = 10;
     std::cout << "Hello" << std::endl;
     recursive2();
+    if (x < 0) return;
+    return;
 }
 
 int main(){
