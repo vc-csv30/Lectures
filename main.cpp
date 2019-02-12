@@ -24,10 +24,21 @@ void recursive1() {
     return;
 }
 
+int fib(int n) {
+    if (n == 0) {
+        return 0;
+    }
+
+    if (n == 1) {
+        return 1;
+    }
+
+    return fib(n - 1) + fib(n - 2);
+}
+
 int main(){
-    recursive2();
-    double cube = exponent(5, 3);
-    double square = exponent(3);
+    std::cout << "fib(7) " << fib(100) << std::endl;
+
     return 0;
 }
 
