@@ -1,43 +1,32 @@
 #define _USE_MATH_DEFINES
 #include <iostream>
-#include <iomanip>
 
-#include <cmath>
+void alignedNumbers(int first, int second) {
+    int sum = first + second;
+    int difference = first - second;
+    double average = sum / 2.0;
+    int distance = abs(first - second);
+    int max = first > second ? first : second;
+    int min = first > second ? second : first;
 
-#include "functions.h"
+    std::cout << "Sum:        " << sum << std::endl;
+    std::cout << "Difference:  " << difference << std::endl;
+    std::cout << "Average:    " << average << std::endl;
 
-using std::cout;
-using std::endl;
-
-void recursive1();
-
-void recursive2() {
-    std::cout << "Goodbye" << std::endl;
-    recursive1();
-}
-
-void recursive1() {
-    int x = 10;
-    std::cout << "Hello" << std::endl;
-    recursive2();
-    if (x < 0) return;
-    return;
-}
-
-int fib(int n) {
-    if (n == 0) {
-        return 0;
-    }
-
-    if (n == 1) {
-        return 1;
-    }
-
-    return fib(n - 1) + fib(n - 2);
 }
 
 int main(){
-    std::cout << "fib(7) " << fib(100) << std::endl;
+
+    int a;
+    int b;
+
+    std::cout << "Enter a number: ";
+    std::cin >> a;
+
+    std::cout << "Enter another number: " << std::endl;
+    std::cin >> b;
+
+    alignedNumbers(a, b);
 
     return 0;
 }
