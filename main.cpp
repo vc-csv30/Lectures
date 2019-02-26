@@ -1,5 +1,6 @@
 #define _USE_MATH_DEFINES
 #include <iostream>
+#include <iomanip>
 
 void alignedNumbers(int first, int second) {
     int sum = first + second;
@@ -9,10 +10,12 @@ void alignedNumbers(int first, int second) {
     int max = first > second ? first : second;
     int min = first > second ? second : first;
 
-    std::cout << "Sum:        " << sum << std::endl;
-    std::cout << "Difference:  " << difference << std::endl;
-    std::cout << "Average:    " << average << std::endl;
-
+    std::cout << "Sum: " << std::setw(26) << sum << std::endl;
+    std::cout << "Difference: " << std::setw(19) << difference << std::endl;
+    std::cout << "Average: " << std::setw(24) << std::setprecision(1) << std::fixed << average << std::endl;
+    std::cout << "Distance: " << std::setw(21) << distance << std::endl;
+    std::cout << "Min: " << std::setw(26) << min << std::endl;
+    std::cout << "Max: " << std::setw(26) << max << std::endl;
 }
 
 int main(){
