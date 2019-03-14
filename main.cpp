@@ -2,35 +2,28 @@
 #include <iostream>
 #include <iomanip>
 
-void alignedNumbers(int first, int second) {
-    int sum = first + second;
-    int difference = first - second;
-    double average = sum / 2.0;
-    int distance = abs(first - second);
-    int max = first > second ? first : second;
-    int min = first > second ? second : first;
-
-    std::cout << "Sum: " << std::setw(26) << sum << std::endl;
-    std::cout << "Difference: " << std::setw(19) << difference << std::endl;
-    std::cout << "Average: " << std::setw(24) << std::setprecision(1) << std::fixed << average << std::endl;
-    std::cout << "Distance: " << std::setw(21) << distance << std::endl;
-    std::cout << "Min: " << std::setw(26) << min << std::endl;
-    std::cout << "Max: " << std::setw(26) << max << std::endl;
-}
-
 int main(){
 
-    int a;
-    int b;
+    int array[] = {10, 20, 30, 40};
+    int array2[] = {100, 200, 300, 400, 500, 600};
 
-    std::cout << "Enter a number: ";
-    std::cin >> a;
+    for (int value: array2) {
+        value = value + 10;
+        std::cout << "1st element: " << value << std::endl;
+    }
 
-    std::cout << "Enter another number: " << std::endl;
-    std::cin >> b;
+    std::string sentence = "the quick brown fox jumps over the lazy dog";
+    for (int i = 0; i < sentence.length(); i++) {
+        size_t pos = sentence.find("the", i);
+        if (pos != std::string::npos) {
+            i = pos +1;
+        } else {
+            break;
+        }
+        std::cout << pos << std::endl;
+    }
 
-    alignedNumbers(a, b);
-
+    std::string period = ".";
+    std::cout << (sentence + period) << std::endl;
     return 0;
 }
-
