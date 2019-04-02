@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <math.h>
+#include <vector>
 
 struct Spell {
 
@@ -114,17 +115,44 @@ public:
 using namespace std;
 
 int main(){
-    // Alias for char
-    uint8_t i = 32;
 
-    while(0) {
-        std::cout << "cs" << (' ') << "v30" << std::endl;
+    std::vector<int> values;
+
+    std::cout << "values size: " << values.size() << std::endl;
+    std::cout << "values capacity: " << values.capacity() << std::endl;
+
+    values.push_back(10);
+
+    std::cout << "values size: " << values.size() << std::endl;
+    std::cout << "values capacity: " << values.capacity() << std::endl;
+
+    values.push_back(0);
+
+    std::cout << "values size: " << values.size() << std::endl;
+    std::cout << "values capacity: " << values.capacity() << std::endl;
+
+    values.push_back(1);
+
+    std::cout << "values size: " << values.size() << std::endl;
+    std::cout << "values capacity: " << values.capacity() << std::endl;
+
+    values.push_back(101);
+
+    std::cout << "values size: " << values.size() << std::endl;
+    std::cout << "values capacity: " << values.capacity() << std::endl;
+
+    values.insert(values.begin()+1, 23);
+
+    std::cout << "values size: " << values.size() << std::endl;
+    std::cout << "values capacity: " << values.capacity() << std::endl;
+    for (int i = 0; i < values.size(); i++) {
+        std::cout << "value at index " << i << " is " << values[i] << std::endl;
     }
 
-    int x = 3, y = 77778;
-    if (x % 2 && y % 2) {
-        cout << "Both are odd" << std::endl;
-    }
+    auto x = 1.0;
 
+    for (auto itr = values.begin(); itr != values.end(); itr++) {
+        std::cout << "the value is " << *itr << std::endl;
+    }
     return 0;
 }
