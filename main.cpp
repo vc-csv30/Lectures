@@ -112,28 +112,38 @@ public:
     }
 };
 
+enum DaysOfWeek {
+    Sunday,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday
+};
+
+enum Suit {
+     Spades,
+     Hearts,
+     Clubs,
+     Diamonds
+};
+
+class Card {
+    Suit suit;
+    int value;
+};
+
 using namespace std;
 
 int main(){
 
-    std::vector<int> values;
-    values.reserve(100);
+    std::vector<std::string> strings;
 
-    srandom(time(nullptr));
-    for (int i = 0; i < 100; i++) {
-        values.push_back(random() % 102 + 18);
-    }
+    strings.push_back("1");
 
-    int sum = 0;
-    for (int h = 0; h < values.size(); h++) {
-        std::cout << "age: " << values[h] << std::endl;
-        sum += values[h];
-    }
-    double average = static_cast<double>(sum) / values.size();
-
-    std::cout << "Average: " << average << std::endl;
-    std::cout << "Size: " << values.size() << std::endl;
-    std::cout << "Capacity: " << values.capacity() << std::endl;
+    std::cout << "Size: " << strings.size() << std::endl;
+    std::cout << "Capacity: " << strings.capacity() << std::endl;
 
     return 0;
 }
