@@ -117,42 +117,23 @@ using namespace std;
 int main(){
 
     std::vector<int> values;
+    values.reserve(100);
 
-    std::cout << "values size: " << values.size() << std::endl;
-    std::cout << "values capacity: " << values.capacity() << std::endl;
-
-    values.push_back(10);
-
-    std::cout << "values size: " << values.size() << std::endl;
-    std::cout << "values capacity: " << values.capacity() << std::endl;
-
-    values.push_back(0);
-
-    std::cout << "values size: " << values.size() << std::endl;
-    std::cout << "values capacity: " << values.capacity() << std::endl;
-
-    values.push_back(1);
-
-    std::cout << "values size: " << values.size() << std::endl;
-    std::cout << "values capacity: " << values.capacity() << std::endl;
-
-    values.push_back(101);
-
-    std::cout << "values size: " << values.size() << std::endl;
-    std::cout << "values capacity: " << values.capacity() << std::endl;
-
-    values.insert(values.begin()+1, 23);
-
-    std::cout << "values size: " << values.size() << std::endl;
-    std::cout << "values capacity: " << values.capacity() << std::endl;
-    for (int i = 0; i < values.size(); i++) {
-        std::cout << "value at index " << i << " is " << values[i] << std::endl;
+    srandom(time(nullptr));
+    for (int i = 0; i < 100; i++) {
+        values.push_back(random() % 102 + 18);
     }
 
-    auto x = 1.0;
-
-    for (auto itr = values.begin(); itr != values.end(); itr++) {
-        std::cout << "the value is " << *itr << std::endl;
+    int sum = 0;
+    for (int h = 0; h < values.size(); h++) {
+        std::cout << "age: " << values[h] << std::endl;
+        sum += values[h];
     }
+    double average = static_cast<double>(sum) / values.size();
+
+    std::cout << "Average: " << average << std::endl;
+    std::cout << "Size: " << values.size() << std::endl;
+    std::cout << "Capacity: " << values.capacity() << std::endl;
+
     return 0;
 }
